@@ -1,16 +1,13 @@
 package it.unibs.fp.arnaldo.Planetarium;
 
-public class CorpoCeleste 
-{
-	// VARIABLES
-	
-	private String codiceID ;
+public class CorpoCeleste {
+private String codiceID ; //codice univoco
 	
 	private double massa ;
 
-	private double x ;
+	private double coordinataX ; //coordinate rispetto al corpo a cui ruota
 	
-	private double y ;
+	private double coordinataY ; //coordinate rispetto al corpo a cui ruota
 	
 	// COSTRUTTORE
 	
@@ -20,9 +17,9 @@ public class CorpoCeleste
 		
 		this.massa = _massa ;
 		
-		this.x = _x ;
+		this.coordinataX = _x ;
 		
-		this.y = _y ;
+		this.coordinataY = _y ;
 		
 	}
 
@@ -48,35 +45,35 @@ public class CorpoCeleste
 	
 	public double getX() 
 	{
-		return x;
+		return coordinataX;
 	}
 
 	public void setX(double x) 
 	{
-		this.x = x;
+		this.coordinataX = x;
 	}
 
 	public double getY() 
 	{
-		return y;
+		return coordinataY;
 	}
 
 	public void setY(double y) 
 	{
-		this.y = y;
+		this.coordinataY = y;
 	}
 	
 
 	public double distanzaEstraneo( CorpoCeleste estraneo )
 	{
-		return Math.sqrt( Math.pow( x - estraneo.getX(), 2 ) + Math.pow( y - estraneo.getX() , 2 ));
+		return Math.sqrt( Math.pow( coordinataX - estraneo.getX(), 2 ) + Math.pow( coordinataY - estraneo.getX() , 2 ));
 	}
 
 	public void stampaDati ()
 	{
 		System.out.println( "Codice univoco: " + codiceID );
 		System.out.println("Massa = " + this.massa );
-		System.out.println( String.format( "Posizione: ( %.2f ; %.2f )" , this.x , this.y ));
+		System.out.println( String.format( "Posizione: ( %.2f ; %.2f )" , this.coordinataX , this.coordinataY ));
 	}
 	
 }
